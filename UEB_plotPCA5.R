@@ -12,7 +12,7 @@ require(ggplot2)
 require(ggrepel)
 require(vegan)
 
-plotPCA5 <- function (datos, factor, scale, title, colores, size = 1.5, glineas = 0.25, labels = NULL, ellipse = TRUE) {
+plotPCA5 <- function (datos, factor, scale, title, colores, size = 1.5, glineas = 0.25, labels = NULL, ellipse = FALSE) {
   data <- prcomp(t(datos), scale = scale)
   #ajustos del gràfic
   dataDf <- data.frame(data$x)
