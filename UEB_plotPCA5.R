@@ -7,6 +7,7 @@
 #labels = nom de les mostres. En cas de no escriure res, només es veuran els punts, no els noms
 #scale = si quieres escalar los datos o no
 #ellipse = si vols que dibuixi l'ellipse del grup de les mostres
+#shape = per diferenciar els nivells del factor per la forma dels punts
 
 require(ggplot2)
 require(ggrepel)
@@ -24,7 +25,7 @@ plotPCA5 <- function (datos, factor, scale, title, colores, size = 1.5, glineas 
     theme_classic() +
     geom_hline(yintercept = 0, color = "gray70") +
     geom_vline(xintercept = 0, color = "gray70") +
-    geom_point(aes(color = Group), alpha = 0.55, size = 3) +
+    geom_point(aes(color = Group, shape = Group), alpha = 0.55, size = 3) +
     coord_cartesian(xlim = c(min(data$x[, 1]) - 5, max(data$x[, 1]) + 5)) +
     scale_fill_discrete(name = "Group")
   
